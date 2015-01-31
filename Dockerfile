@@ -63,7 +63,7 @@ COPY supervisord.conf /etc/supervisord.conf
 
 # Copy custom supervisor init.d script (for nagios start|stop)
 COPY nagios-supervisor-wrapper.sh /usr/bin/nagios-supervisor-wrapper.sh
-RUN sed -i 's|^\(nagios_init_script\)=\(.*\)$|\1="/usr/bin/nagios-supervisor-wrapper.sh"|g' /etc/adagios/adagios.conf
+RUN sed -i 's|^\(nagios_init_script\)=\(.*\)$|\1="sudo /usr/bin/nagios-supervisor-wrapper.sh"|g' /etc/adagios/adagios.conf
 RUN echo "nagios ALL=NOPASSWD: /usr/bin/nagios-supervisor-wrapper.sh" >> /etc/sudoers
 
 # Create childlogdir
