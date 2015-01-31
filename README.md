@@ -68,6 +68,7 @@ ExecStart=/usr/bin/docker run -h nagios --name adagios -p 80:80 \
   -v /srv/nagios/log:/var/log/nagios \
   -v /srv/nagios/opt:/opt \
   pschmitt/adagios
+ExecStop=/usr/bin/docker stop adagios
 
 [Install]
 WantedBy=multi-user.target
