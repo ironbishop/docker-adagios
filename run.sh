@@ -33,7 +33,9 @@ do
         mkdir -p "$dir"
     fi
 done
-chown -R nagios /var/log/nagios
+
+# Fix permissions
+chown -R nagios /etc/nagios /var/log/nagios
 
 # Execute custom init scripts
 for script in $(ls -1 /opt/*.sh 2> /dev/null)
