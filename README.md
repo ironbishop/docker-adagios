@@ -18,6 +18,7 @@ This one installs the speedtest-cli module from
 http://exchange.nagios.org/directory/Plugins/Network-Connections,-Stats-and-Bandwidth/check_speedtest-2Dcli/details
 
 **NOTE**: These scripts must end with the ".sh" extension and need to be executable.
+
 **NOTE**: Bear in mind that these scripts will be executed EVERY TIME you start
 your container.
 
