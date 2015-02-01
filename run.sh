@@ -36,6 +36,8 @@ done
 
 # Fix permissions
 chown -R nagios /etc/nagios /var/log/nagios
+chgrp -R nagios /etc/nagios /var/log/nagios
+chmod 750 /etc/nagios /var/log/nagios
 
 # Execute custom init scripts
 for script in $(ls -1 /opt/*.sh 2> /dev/null)
